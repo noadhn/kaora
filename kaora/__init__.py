@@ -11,7 +11,6 @@ app.config['APPLICATION_ROOT'] = False
 app.config['OAUTHLIB_INSECURE_TRANSPORT'] = True
 app.config['UPLOAD_FOLDER'] = '/Users/noadhn/Desktop/temp/kaora/static/images/new-products'
 app.config["ALLOWED_EXTENSIONS"] = ['png', 'jpg', 'jpeg']
-
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
