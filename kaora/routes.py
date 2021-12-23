@@ -20,7 +20,7 @@ def about():
 
 @app.route("/travel_blog")
 def travel_blog():
-    return render_template("travel_blog.html", title="Travel Blog")
+    return render_template("travel_blog.html", title="Travel Blog", is_active=True)
 
 
 @app.route("/gallery")
