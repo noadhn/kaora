@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="container" style="width: 60%; margin: 2% auto">
+  <div class="row">
+    <div class="col">
+
+      <h4>Hey Helene,<br> Wants to add a new product?</h4>
+      <hr>
+
+      <form action="/upload_products" method="POST" enctype="multipart/form-data">
+        <fieldset class="form-group">
+
+             <div class="form-group">
+                 {{ form.collection.label(class="form-control-label") }}
+                    {% if form.collection.errors %}
+                 {{ form.collection(class="form-control form-control-lg is-invalid") }}
+                 <div class="invalid-feedback">
+                     {% for error in form.collection.errors %}
+                        <span> {{ error }}</span>
+                     {% endfor %}
+                 </div>
+                 {% else %}
+                    {{ form.collection(class="form-control form-control-lg") }}
+                 {% endif %}
+             </div>
+
+            <div class="form-group">
+                 {{ form.category.label(class="form-control-label") }}
+                    {% if form.category.errors %}
+                 {{ form.category(class="form-control form-control-lg is-invalid") }}
+                 <div class="invalid-feedback">
+                     {% for error in form.category.errors %}
+                        <span> {{ error }}</span>
+                     {% endfor %}
+                 </div>
+                 {% else %}
+                    {{ form.category(class="form-control form-control-lg") }}
+                 {% endif %}
+             </div>
+
+            <div class="form-group">
+                 {{ form.price.label(class="form-control-label") }}
+                    {% if form.price.errors %}
+                 {{ form.price(class="form-control form-control-lg is-invalid") }}
+                 <div class="invalid-feedback">
+                     {% for error in form.price.errors %}
+                        <span> {{ error }}</span>
+                     {% endfor %}
+                 </div>
+                 {% else %}
+                    {{ form.price(class="form-control form-control-lg") }}
+                 {% endif %}
+             </div>
+
+            <label>
+                <span>Is available to sale?</span>
+                <input type="checkbox" name="is_available" value="is_available">
+            </label>
+
+            <div class="form-group">
+          <label>Select image</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="img" id="img">
+            <label class="custom-file-label" for="img">Select image...</label>
+          </div>
+        </div>
+        {% with messages = get_flashed_messages(with_categories=True) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}" style="margin: 3vh auto 3vh; width: 80%;text-align: center">{{ message }}</div>
+              {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <button type="submit" class="btn btn-info">Upload</button>
+      </fieldset>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

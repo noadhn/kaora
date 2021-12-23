@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../static/images/logoex.png">
+    <link href="../static/style.css" rel="stylesheet">
+    <title>Kaora | Gallery</title>
+</head>
+<body>
+
+    <div class="content_nav">
+        <div class="navigation">
+            <div class="container_nav">
+                <div class="nav_bar">
+
+                    <div class="logo-toggle-container">
+                        <a href="{{ url_for('index') }}">
+                            <img src="../static/images/logoex.png" alt="">
+                        </a>
+                        <span class="toggle-box">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+
+                    <ul class="menu">
+                       <li><a href="{{ url_for('about') }}">About</a></li>
+                       <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                            {% if is_active %}
+                        <li><a href="{{ url_for('travel_blog') }}">Travel</a></li>
+                            {% else %}
+                        <li><a href="{{ url_for('register') }}">Signup</a></li>
+                            {% endif %}
+                            {% if is_active %}
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                            {% else %}
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                            {% endif %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-mosaic">
+
+        <div class="card-zoom-in">
+                <div class="card" style="background-image: url('../static/images/fig-rosewood-yAAYF_UFxrQ-unsplash.jpg')">
+                    <div class="description-img">Fig Rosewood</div>
+                </div>
+        </div>
+
+        <div class="card-zoom-in h-2">
+            <div class="card" style="background-image: url('../static/images/larisa-birta-h9kODfOsyOU-unsplash.jpg')">
+                <div class="description-img">Vladimir Gladkov</div>
+            </div>
+        </div>
+
+        <div class="card-zoom-in">
+            <div class="card" style="background-image: url('../static/images/annie-spratt-n42ogaQn32o-unsplash.jpg')">
+                <div class="description-img">Annie Spratt</div>
+            </div>
+        </div>
+
+        <div class="card-zoom-in h-2">
+            <div class="card" style="background-image: url('../static/images/tom-crew-oiZAQvxTcYQ-unsplash.jpg')">
+                <div class="description-img">Tom Crew</div>
+            </div>
+        </div>
+
+        <div class="card-zoom-in">
+            <div class="card" style="background-image: url('../static/images/nordwood-themes-SM3hDC6phTM-unsplash.jpg')">
+                <div class="description-img">Nordwood Themes</div>
+            </div>
+        </div>
+
+        <div class="card-zoom-in h-2">
+            <div class="card" style="background-image: url('../static/images/darya-ginger-TzHVUMUNXps-unsplash.jpg')">
+                <div class="description-img">Elisabetta Lombardo</div>
+            </div>
+        </div>
+
+        <div class="card-zoom-in h-2">
+            <div class="card" style="background-image: url('../static/images/geraldine-lewa-N_Z91Evs_oM-unsplash.jpg')">
+                <div class="description-img">Geraldine Lewa</div>
+            </div>
+        </div>
+
+        <div class="card-zoom-in h-2">
+            <div class="card" style="background-image: url('../static/images/suzanne-boureau-vG9Y8YvzdSQ-unsplash.jpg')">
+                <div class="description-img">Suzanne-Boureau</div>
+            </div>
+        </div>
+
+        <div class="card-zoom-in">
+            <div class="card" style="background-image: url('../static/images/tom-crew-NUUjVj4YQLA-unsplash.jpg')">
+                <div class="description-img">Tom Crew</div>
+            </div>
+        </div>
+
+        <div class="card-zoom-in">
+            <div class="card" style="background-image: url('../static/images/tom-crew-NLcLjLNUJbY-unsplash.jpg')">
+                <div class="description-img">Tom Crew</div>
+            </div>
+        </div>
+
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".navigation .nav_bar .logo-toggle-container .toggle-box").click(function(){
+            $(".navigation .menu").stop().slideToggle()
+        });
+    })
+    $('.enter_link').click(function () {
+    $(this).parent('#splashscreen').fadeOut(500);
+});
+</script>
+</body>
+</html>

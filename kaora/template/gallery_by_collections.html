@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../static/images/logoex.png">
+    <link href="../static/style.css" rel="stylesheet">
+    <title>Kaora | Collections</title>
+</head>
+<body>
+    <div class="content_nav" id="content_nav_gallery">
+        <div class="navigation">
+            <div class="container_nav">
+                <div class="nav_bar">
+
+                    <div class="logo-toggle-container">
+                        <a href="{{ url_for('index') }}">
+                            <img src="../static/images/logoex.png" alt="">
+                        </a>
+                        <span class="toggle-box">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+
+                    <ul class="menu">
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                            {% if is_active %}
+                        <li><a href="{{ url_for('travel_blog') }}">Travel</a></li>
+                            {% else %}
+                        <li><a href="{{ url_for('register') }}">Signup</a></li>
+                            {% endif %}
+                            {% if is_active %}
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                            {% else %}
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                            {% endif %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slideshow-container">
+        <div class="slideshow-item"
+             style="background-image:url('../static/images/nordwood-themes-SM3hDC6phTM-unsplash.jpg'); margin-top:3%">
+            <div class="slideshow-item-text">
+                <h2>African Collection</h2>
+            </div>
+        </div>
+
+        <div class="slideshow-item"
+             style="background-image:url('../static/images/jessica-ruscello-G8vPQ-XVxxY-unsplash.jpg'); margin-top:3%">
+            <div class="slideshow-item-text">
+                <h2>Greek Collection</h2>
+            </div>
+        </div>
+
+        <div class="slideshow-item"
+             style="background-image:url('../static/images/tom-crew-oiZAQvxTcYQ-unsplash.jpg'); margin-top:3%">
+            <div class="slideshow-item-text">
+                <h2>Minimalist Collection</h2>
+            </div>
+        </div>
+
+        <div class="slideshow-item"
+             style="background-image:url('../static/images/vladimir-gladkov-NPPIq1XFdck-unsplash.jpg'); margin-top:3%">
+            <div class="slideshow-item-text">
+                <h2>Daily Collection</h2>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="collections_header"><span>collections</span><span id="by"> by </span><span class="kaora_header">Kaora</span></h1>
+
+    <div class="all_gallery_link"><a href="{{ url_for('products') }}">Click here to see all products</a></div>
+
+    <div class="row">
+      <div class="column">
+        <img src="../static/images/nordwood-themes-SM3hDC6phTM-unsplash.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" alt="">
+        <h3> African Collection</h3>
+      </div>
+      <div class="column">
+        <img src="../static/images/jessica-ruscello-G8vPQ-XVxxY-unsplash.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" alt="">
+        <h3> Greek Collection</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img src="../static/images/tom-crew-oiZAQvxTcYQ-unsplash.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow cursor" alt="">
+        <h3> Minimalist Collection</h3>
+      </div>
+      <div class="column">
+        <img src="../static/images/vladimir-gladkov-NPPIq1XFdck-unsplash.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow cursor" alt="">
+        <h3> Greek Collection</h3>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <img src="../static/images/tom-crew-NLcLjLNUJbY-unsplash.jpg" style="width:100%" alt="">
+        </div>
+        <div class="mySlides">
+          <img src="../static/images/tom-crew-8_ldgq801cE-unsplash.jpg" style="width:100%" alt="">
+        </div>
+        <div class="mySlides">
+          <img src="../static/images/tom-crew-NUUjVj4YQLA-unsplash.jpg" style="width:100%" alt="">
+        </div>
+        <div class="mySlides">
+          <img src="../static/images/tom-crew-U9gXnSGSB3w-unsplash.jpg" style="width:100%" alt="">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <div class="cont_slider">
+            <div class="column">
+              <img class="demo cursor" src="../static/images/tom-crew-bgIO-u4GEfI-unsplash.jpg" style="width:100%" onclick="currentSlide(1)" alt="Bowls">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="../static/images/tom-crew-8_ldgq801cE-unsplash.jpg" style="width:100%" onclick="currentSlide(2)" alt="Plates">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="../static/images/tom-crew-NUUjVj4YQLA-unsplash.jpg" style="width:100%" onclick="currentSlide(3)" alt="Vases">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="../static/images/tom-crew-oHrC8V_XRU4-unsplash.jpg" style="width:100%" onclick="currentSlide(4)" alt="Cups">
+            </div>
+        </div>
+      </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    $(".navigation .nav_bar .logo-toggle-container .toggle-box").click(function(){
+        $(".navigation .menu").stop().slideToggle()
+        });
+    })
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+</script>
+
+</body>
+</html>
