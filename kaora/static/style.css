@@ -582,12 +582,12 @@ img.hover-shadow {
     font-size: 8vw;
     font-family: 'Caveat', cursive;
   }
-#first{color: #275462;}
-#second{color: #0d8f9b;}
-#third{color: #bd5e2f;}
-#four{color: #5a3012;}
+  #first{color: #275462;}
+  #second{color: #0d8f9b;}
+  #third{color: #bd5e2f;}
+  #four{color: #5a3012;}
 
-.kaora_welcome{
+  .kaora_welcome{
     width: 80%;
     margin: 0 10%;
     height: 20vh;
@@ -596,18 +596,18 @@ img.hover-shadow {
     display:block;
     justify-content: space-evenly;
     text-align: center;
-}
+  }
 .kaora_welcome h6{
   font-weight: 400;
-  font-size: 10vw;
+  font-size: 6vw;
   color: #bd5e2f;
   font-family: 'Caveat', cursive;
-}
+  }
 .kaora_welcome h1{
   font-weight: 600;
-  font-size: 20vw;
+  font-size: 14vw;
   color: #bd5e2f;
-}
+  }
   .content_travel{
     position: relative;
     display: flex;
